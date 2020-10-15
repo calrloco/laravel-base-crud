@@ -22,6 +22,6 @@
       <label for="descrizione">Example textarea</label>
     <textarea class="form-control" id="descrizione" name="descrizione" rows="3">{{old('descrizione')}}</textarea>
     </div>
-    <input type="submit" value="invia">
+    <button type="submit" class="btn btn-primary" value="invia">Submit</button>
   </form>
 @endsection
