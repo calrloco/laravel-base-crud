@@ -46,7 +46,8 @@ class ProductController extends Controller
         $newProduct->tipo = $data['tipo'];
         $newProduct->descrizione = $data['descrizione'];
         $newProduct->disponibile = $data['disponibilita'];
-        $salvato = $newProduct->save();
+        $newProduct->save();
+        return redirect()->route('products.index')->with('success','prodotto creato correttamente');
     }
 
     /**
@@ -57,7 +58,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
