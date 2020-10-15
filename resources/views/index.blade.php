@@ -10,6 +10,7 @@
     @endif
     <a href="{{route('products.create')}}" class="btn btn-primary mb-5">Crea Prodotto</a>
     <table class="table">
+      
         <thead>
             <tr>
                 <th scope="col">Id</th>
@@ -22,12 +23,13 @@
         <tbody>
             {{-- /*visualizzo proditti*/ --}}
             @foreach ($data as $prodotto)
-                <tr>
-                    <th scope="row">{{ $prodotto['id'] }}</th>
-                    <td>{{ $prodotto['nome'] }}</td>
-                    <td>{{ $prodotto['tipo'] }}</td>
-                    <td>{{ $prodotto['descrizione'] }}</td>
-                    <td>{{ $prodotto['disponibile'] }}</td>
+            
+            <tr>
+                    <th scope="row">{{ $prodotto->id }}</th>
+                    <td>{{ $prodotto->nome }}</td>
+                    <td>{{ $prodotto->tipo }}</td>
+                    <td>{{ $prodotto->descrizione }}</td>
+                    <td>{{ $prodotto->disponibile }}</td>
                 </tr>
             @endforeach
         </tbody>
