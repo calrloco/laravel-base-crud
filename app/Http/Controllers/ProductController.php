@@ -47,6 +47,7 @@ class ProductController extends Controller
         $newProduct->descrizione = $data['descrizione'];
         $newProduct->disponibile = $data['disponibilita'];
         $newProduct->save();
+        /// redirect all'index con messaggio inserimento 
         return redirect()->route('products.index')->with('success','prodotto creato correttamente');
     }
 
@@ -60,7 +61,6 @@ class ProductController extends Controller
     {
         
     }
-
     /**
      * Show the form for editing the specified resource.
      *
