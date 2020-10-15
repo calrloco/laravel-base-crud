@@ -23,7 +23,6 @@
         <tbody>
             {{-- /*visualizzo proditti*/ --}}
             @foreach ($data as $prodotto)
-
                 <tr>
                     <th scope="row">{{ $prodotto->id }}</th>
                     <td>{{ $prodotto->nome }}</td>
