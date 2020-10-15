@@ -24,10 +24,10 @@
             @foreach ($data as $prodotto)
                 <tr>
                     <th scope="row">{{ $prodotto['id'] }}</th>
-                    <td>{{ $prodotto['Nome'] }}</td>
+                    <td>{{ $prodotto['nome'] }}</td>
                     <td>{{ $prodotto['tipo'] }}</td>
                     <td>{{ $prodotto['descrizione'] }}</td>
-                    <td>{{ $prodotto['disponibilita'] }}</td>
+                    <td>{{ $prodotto['disponibile'] }}</td>
                 </tr>
             @endforeach
         </tbody>
