@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     
-    <table class="table">
+    <table class="table bg-light">
 
         <thead>
             <tr>

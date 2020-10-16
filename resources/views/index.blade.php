@@ -9,7 +9,7 @@
         </div>
     @endif
     
-    <table class="table">
+    <table class="table bg-light">
 
         <thead>
             <tr>
