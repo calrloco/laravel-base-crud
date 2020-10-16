@@ -16,7 +16,9 @@
                 <div class="col-sm-6 offset-sm-3 mt-5">
                     {{--  bottone dinamico a seconda di dove sei --}}
                     <a href="{{ url()->current() == route('products.index') ? route('products.create') : route('products.index') }}" class="btn btn-primary mb-5">
-                        {{ url()->current() == route('products.index') ? 'Crea Prodotto' : 'Cattalogo Prodotti' }}
+                        
+                        {{ url()->current() == route('products.index') ? 'Crea Prodotto' : 'Catalogo Prodotti' }}
+                    
                     </a>
                     @yield('content')
 
