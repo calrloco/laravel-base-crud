@@ -12,5 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'ProductController@Index');
+Route::get('/', 'ProductController@Index')->name('home');
 Route::resource('products','ProductController');
