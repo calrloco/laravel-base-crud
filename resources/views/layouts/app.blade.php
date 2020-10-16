@@ -11,11 +11,13 @@
 
 <body>
     <main>
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3 mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3 mt-5">
 
-                @yield('content')
+                    @yield('content')
 
+                </div>
             </div>
         </div>
     </main>

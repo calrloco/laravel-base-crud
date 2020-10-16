@@ -37,18 +37,17 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
-        if (empty($data['nome']) || empty($data['tipo']) || empty($data['descrizione'])) {
-            return  back()->withInput();
-        }
+        $request->validate([
+            'nome' => 'required|max:100|min:4',
+            'tipo' => 'required',
+            'descrizione' => 'required',
+            'disponibile' => 'required|min:0|max:1',
+        ]);
         $newProduct = new Product;
-        $newProduct->nome = $data['nome'];
-        $newProduct->tipo = $data['tipo'];
-        $newProduct->descrizione = $data['descrizione'];
-        $newProduct->disponibile = $data['disponibilita'];
+        $newProduct->fill($data);
         $newProduct->save();
         /// redirect all'index con messaggio inserimento 
-        return redirect()->route('products.index')->with('success','prodotto creato correttamente');
+        return redirect()->route('products.index')->with('success', 'prodotto creato correttamente');
     }
 
     /**
@@ -57,9 +56,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        
+        return view('show', compact('product'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -67,9 +66,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('create', compact('product'));
     }
 
     /**
@@ -79,9 +78,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $data = $request->all();
+        $product->update($data);
+        return redirect()->route('products.index');
     }
 
     /**
@@ -90,8 +91,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('products.index');
     }
 }
