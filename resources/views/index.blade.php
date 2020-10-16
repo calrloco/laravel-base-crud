@@ -8,7 +8,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <a href="{{ route('products.create') }}" class="btn btn-primary mb-5">Crea Prodotto</a>
+    
     <table class="table">
 
         <thead>

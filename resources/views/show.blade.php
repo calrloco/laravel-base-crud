@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<a href="{{ route('products.index') }}" class="btn btn-primary mb-5">Back</a>
+    
     <table class="table">
 
         <thead>
